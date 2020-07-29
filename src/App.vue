@@ -6,8 +6,23 @@
 
 <script>
     export default {
-        
+
     }
 </script>
 
-<style></style>
+<style>
+    body {
+        margin: 0;
+    }
+
+    #app {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        color: #FFF;
+    }
+</style>
