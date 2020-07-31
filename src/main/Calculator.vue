@@ -1,21 +1,21 @@
 <template>
     <div class="calculator">
         <Display value="1000" />
-        <Button label="AC" triple/>
-        <Button label="/" operation/>
-        <Button label="7" />
-        <Button label="8" />
-        <Button label="9" />
+        <Button label="AC" triple @onCalcButtonClick="clearMemory" />
+        <Button label="/" operation @onCalcButtonClic="setOperation" />
+        <Button label="7" @onClick="addDigit" />
+        <Button label="8" @onClick="addDigit" />
+        <Button label="9" @onClick="addDigit" />
         <Button label="*" operation/>
-        <Button label="5" />
-        <Button label="4" />
-        <Button label="3" />
+        <Button label="5" @onClick="addDigit" />
+        <Button label="4" @onClick="addDigit" />
+        <Button label="3" @onClick="addDigit" />
         <Button label="-" operation/>
-        <Button label="1" />
-        <Button label="2" />
-        <Button label="3" />
+        <Button label="1" @onClick="addDigit" />
+        <Button label="2" @onClick="addDigit" />
+        <Button label="3" @onClick="addDigit" />
         <Button label="+" operation/>
-        <Button label="0" double/>
+        <Button label="0" double @onClick="addDigit" />
         <Button label="." />
         <Button label="=" operation/>
     </div>
@@ -27,7 +27,18 @@ import Display from '../components/Display'
 import Button from '../components/Button'
 
 export default {
-    components: { Button, Display }
+    components: { Button, Display },
+    methods: {
+        clearMemory() {
+            console.log('Limpar Memoria')
+        },
+        setOperation(operation) {
+            console.log('Operação' + operation)
+        },
+        addDigit(n) {
+            console.log('Digito ' + n)
+        }
+    }
 }
 </script>
 .calculator {
